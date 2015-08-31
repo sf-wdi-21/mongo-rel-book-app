@@ -8,7 +8,6 @@ $(function () {
 
     $.get("/books").
         done(function(data) {
-            console.log(data);
             $(data).each(function (index, book) {
                 var $book = $(bookTemp(book));
                 $booksCon.append($book);
@@ -18,3 +17,18 @@ $(function () {
 
 
 });
+
+
+function deleteComment(context){
+    console.log(context.name);
+    console.log(context.id);
+    var toDelete = {commentID: context.id, bookID: context.name};
+    $.ajax({
+        url: "/books",
+        type: "DELETE",
+        data: toDelete,
+        success: function(){
+            window.location.reload();
+        }
+    });
+};

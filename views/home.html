@@ -25,14 +25,21 @@
                         <p>Author: <%= author %></p>
                         <p><em><%= description %></em></p>
                         <p><strong>
-                            Tags:  <% _.each(comments, function(item)
+                            Comments:  <% _.each(comments, function(item)
                             { %>
-                                <%= item.keyword %> 
+                                <p><%= item.comment %> - <%=item.person%> <button class="btn btn-xs pull-right" name='<%=_id%>' id='<%=item._id%>' onclick="deleteComment(this)"><span class="close">X</span></button></p>
                             <% }); %>
                         </strong></p>
                     </div>
+                    <form id="commentForm" action="/books" method="POST">
+                        <input name='comment' id="newComment" placeholder="Add Comment" required/>
+                        <input name="user" id="userName" placeholder="Username" required/>
+                        <input name="id" value='<%=_id%>' style="display: none"/>
+                        <input type="submit" id="<%=_id%>" value="Post Comment" data-title='<%=title%>' class="btn btn-default" />
+                    </form>    
                 </script>
             </div>
+            <hr><br>
         </div>
     </body>
 </html>
