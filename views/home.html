@@ -25,9 +25,9 @@
                         <p>Author: <%= author %></p>
                         <p><em><%= description %></em></p>
                         <p><strong>
-                            Tags:  <% _.each(tags, function(item)
+                            Comments:  <% _.each(comments, function(item)
                             { %>
-                                <%= item.keyword %> 
+                                <p>"<%= item.comment %>" - <%= item.person %></p>
                             <% }); %>
                         </strong></p>
                     </div>
