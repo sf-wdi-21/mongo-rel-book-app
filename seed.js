@@ -22,13 +22,13 @@ var ourBooks = require("./books.json");
 // 	});
 // });
 
-db.Book.findOne({title: "Ender's Game"}, function (err, book) {
-	if(err) {return console.log(err);}
-	/* To remove ANY embedded document, simplly call .remove(); */
-	book.comments[0].remove();
-	book.save(function(err, success) {
-		if(err) {return console.log(err);}
-		console.log("Successfully removed comment");
-		process.exit(0);
-	})
-})
+// db.Book.findOne({title: "Ender's Game"}, function (err, book) {
+// 	if(err) {return console.log(err);}
+// 	/* To remove ANY embedded document, simplly call .remove(); */
+// 	book.comments[0].remove();
+// 	book.save(function(err, success) {
+// 		if(err) {return console.log(err);}
+// 		console.log("Successfully removed comment");
+// 		process.exit(0);
+// 	})
+// })
